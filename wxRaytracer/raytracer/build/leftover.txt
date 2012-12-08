@@ -1,0 +1,115 @@
+	
+	/*
+	Vector3D one = Vector3D(9.779939, -1.310258, 0.000000);
+	Vector3D two = Vector3D(0.000001, -3.356933, -7.335199);
+	Vector3D three = Vector3D(0.000001, 0.944252, -7.525429);
+	Vector3D four = Vector3D(2.254512, -1.310258, -7.525429);
+	Vector3D five = Vector3D(-4.582541, -3.746032, -2.683121);
+	Vector3D six = Vector3D(-4.187303, -3.746032, 2.683120);
+	Vector3D seven = Vector3D(-4.573371, 1.293026, 2.603284);
+	Vector3D eight = Vector3D(-4.573370, 1.293026, -2.603284);
+	Vector3D nine = Vector3D(0.000000, 6.215170, -2.254510);
+	Vector3D ten = Vector3D(-0.000000, 6.215170, 2.254510);
+	Vector3D eleven = Vector3D(2.254510, 6.215170, 0.000000);
+	Vector3D twelve = Vector3D(-2.444699, -3.356933, 7.335199);
+	Vector3D thirteen = Vector3D(2.254510, -1.310258, 7.525429);
+	Vector3D fourteen = Vector3D(-2.889287, 2.280257, 7.525429);
+	Vector3D fifteen = Vector3D(-2.013483, -7.838423, 2.444740);
+	Vector3D sixteen = Vector3D(0.000000, -7.451102, -2.444741);
+	Vector3D seventeen = Vector3D(2.444740, -7.451102, -0.000000);
+	Vector3D eighteen = Vector3D(-9.251696, 0.078180, -0.000000);
+
+	Triangle*	triangle_ptr1 = new Triangle(fifteen,sixteen,seventeen); 
+	triangle_ptr1->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr1);
+	Triangle*	triangle_ptr2 = new Triangle(one,four,eleven); 
+	triangle_ptr2->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr2);
+	Triangle*	triangle_ptr3 = new Triangle(eleven,four,nine); 
+	triangle_ptr3->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr3);
+	Triangle*	triangle_ptr4 = new Triangle(four,three,nine); 
+	triangle_ptr4->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr4);
+	Triangle*	triangle_ptr5 = new Triangle(one, seventeen, four); 
+	triangle_ptr5->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr5);
+	Triangle*	triangle_ptr6 = new Triangle(seventeen,sixteen,four); 
+	triangle_ptr6->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr6);
+	Triangle*	triangle_ptr7 = new Triangle(four,sixteen,two); 
+	triangle_ptr7->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr7);
+	Triangle*	triangle_ptr8 = new Triangle(one, thirteen, seventeen); 
+	triangle_ptr8->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr8);
+	Triangle*	triangle_ptr9 = new Triangle(seventeen,thirteen,fifteen); 
+	triangle_ptr9->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr9);
+	Triangle*	triangle_ptr10 = new Triangle(thirteen,twelve,fifteen); 
+	triangle_ptr10->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr10);
+	Triangle*	triangle_ptr11 = new Triangle(thirteen,eleven,fourteen); 
+	triangle_ptr11->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr11);
+	Triangle*	triangle_ptr12 = new Triangle(fourteen,eleven,ten); 
+	triangle_ptr12->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr12);
+	Triangle*	triangle_ptr13 = new Triangle(three,eight,nine); 
+	triangle_ptr13->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr13);
+	Triangle*	triangle_ptr14 = new Triangle(twelve, six, fifteen); 
+	triangle_ptr14->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr14);
+	Triangle*	triangle_ptr15 = new Triangle(ten, seven, fourteen); 
+	triangle_ptr15->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr15);
+	Triangle*	triangle_ptr16 = new Triangle(sixteen,five, two); 
+	triangle_ptr16->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr16);
+	Triangle*	triangle_ptr17 = new Triangle(two,eight,three); 
+	triangle_ptr17->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr17);
+	Triangle*	triangle_ptr18 = new Triangle(fifteen,six, five); 
+	triangle_ptr18->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr18);
+	Triangle*	triangle_ptr19 = new Triangle(six, fourteen,seven); 
+	triangle_ptr19->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr19);
+	Triangle*	triangle_ptr20 = new Triangle(nine, seven, ten); 
+	triangle_ptr20->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr20);
+	Triangle*	triangle_ptr21 = new Triangle(two,three,four); 
+	triangle_ptr21->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr21);
+	Triangle*	triangle_ptr22 = new Triangle(six, eighteen, five); 
+	triangle_ptr22->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr22);
+	Triangle*	triangle_ptr23 = new Triangle(nine, ten, eleven); 
+	triangle_ptr23->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr23);
+	Triangle*	triangle_ptr24 = new Triangle(twelve, thirteen, fourteen); 
+	triangle_ptr24->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr24);
+	Triangle*	triangle_ptr25 = new Triangle(fourteen, six, twelve); 
+	triangle_ptr25->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr25);
+	Triangle*	triangle_ptr26 = new Triangle(eighteen, six, seven); 
+	triangle_ptr26->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr26);
+	Triangle*	triangle_ptr27 = new Triangle(eight, two, five); 
+	triangle_ptr27->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr27);
+	Triangle*	triangle_ptr28 = new Triangle(eight, eighteen, seven); 
+	triangle_ptr28->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr28);
+	Triangle*	triangle_ptr29 = new Triangle(five, eighteen, eight); 
+	triangle_ptr29->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr29);
+	Triangle*	triangle_ptr30 = new Triangle(fifteen, five, sixteen); 
+	triangle_ptr30->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr30);
+	Triangle*	triangle_ptr31 = new Triangle(thirteen, one, eleven); 
+	triangle_ptr31->set_material(matte_ptr1);			// light purple
+	add_object(triangle_ptr31);
+	*/
