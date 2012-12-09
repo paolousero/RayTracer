@@ -1,10 +1,10 @@
-#include "Plane.h"
+#include "Disk.h"
 
-const double Plane::kEpsilon = 0.001;
+const double Disk::kEpsilon = 0.001;
 
 // ----------------------------------------------------------------------  default constructor
 
-Plane::Plane(void)	
+Disk::Disk(void)	
 	: 	GeometricObject(),
 		a(0.0),
 		n(0, 1, 0)						
@@ -13,7 +13,7 @@ Plane::Plane(void)
 
 // ----------------------------------------------------------------------  constructor
 
-Plane::Plane(const Point3D& point, const Normal& normal)
+Disk::Disk(const Point3D& point, const Normal& normal)
 	:	GeometricObject(),
 		a(point),
 		n(normal)
@@ -24,25 +24,25 @@ Plane::Plane(const Point3D& point, const Normal& normal)
 
 // ---------------------------------------------------------------- copy constructor
 
-Plane::Plane(const Plane& plane) 
-	:	GeometricObject(plane),
-		a(plane.a),
-		n(plane.n) 				
+Disk::Disk(const Disk& disk) 
+	:	GeometricObject(disk),
+		a(disk.a),
+		n(disk.n) 				
 {}
 
 
 // ---------------------------------------------------------------- clone
 
-Plane* 
-Plane::clone(void) const {
-	return (new Plane(*this));
+Disk* 
+Disk::clone(void) const {
+	return (new Disk(*this));
 }
 
 
 // ---------------------------------------------------------------- assignment operator
 
-Plane& 
-Plane::operator= (const Plane& rhs)	{
+Disk& 
+Disk::operator= (const Disk& rhs)	{
 	
 	if (this == &rhs)
 		return (*this);
@@ -58,14 +58,14 @@ Plane::operator= (const Plane& rhs)	{
 
 // ---------------------------------------------------------------- destructor
 
-Plane::~Plane(void)				
+Disk::~Disk(void)				
 {}
 
 
 // ----------------------------------------------------------------- hit
 
 bool 															 
-Plane::hit(const Ray& ray, double& tmin, ShadeRec& sr) const {	
+Disk::hit(const Ray& ray, double& tmin, ShadeRec& sr) const {	
 
 	double dil = 150;
 	float t = (a - ray.o) * n / (ray.d * n); 
@@ -84,7 +84,7 @@ Plane::hit(const Ray& ray, double& tmin, ShadeRec& sr) const {
 
 // ----------------------------------------------------------------- shadow_hit
 bool
-Plane::shadow_hit(const Ray& ray, float& tmin) const
+Disk::shadow_hit(const Ray& ray, float& tmin) const
 {
 	float t = (a - ray.o)*n/(ray.d*n);
 

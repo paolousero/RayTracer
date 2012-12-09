@@ -1,28 +1,27 @@
-#ifndef __PLANE__
-#define __PLANE__
+#ifndef __DISK__
+#define __DISK__
 
 #include "GeometricObject.h"
 
-//-------------------------------------------------------------------- class Plane
-
-class Plane: public GeometricObject {
+//-------------------------------------------------------------------- class Disk
+class Disk: public GeometricObject {
 	
 	public:
 	
-		Plane(void);   												// default constructor
+		Disk(void);   												// default constructor
 		
-		Plane(const Point3D& point, const Normal& normal);			// constructor	
+		Disk(const Point3D& point, const Normal& normal);			// constructor	
 	
-		Plane(const Plane& plane); 									// copy constructor
+		Disk(const Disk& disk); 									// copy constructor
 		
-		virtual Plane* 												// virtual copy constructor
+		virtual Disk* 												// virtual copy constructor
 		clone(void) const;
 
-		Plane& 														// assignment operator
+		Disk& 														// assignment operator
 		operator= (const Plane& rhs);	
 		
 		virtual														// destructor
-		~Plane(void);   											
+		~Disk(void);   											
 					
 		virtual bool 																								 
 		hit(const Ray& ray, double& tmin, ShadeRec& sr) const;
