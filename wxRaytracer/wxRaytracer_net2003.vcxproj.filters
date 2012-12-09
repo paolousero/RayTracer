@@ -142,6 +142,7 @@
     <ClCompile Include="raytracer\Tracers\Whitted.cpp" />
     <ClCompile Include="raytracer\BRDFs\PerfectSpecular.cpp" />
     <ClCompile Include="raytracer\Materials\Reflective.cpp" />
+    <ClCompile Include="raytracer\GeometricObjects\Disk.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="raytracer\BRDFs\BRDF.h">
@@ -247,6 +248,7 @@
     <ClInclude Include="raytracer\Tracers\Whitted.h" />
     <ClInclude Include="raytracer\BRDFs\PerfectSpecular.h" />
     <ClInclude Include="raytracer\Materials\Reflective.h" />
+    <ClInclude Include="raytracer\GeometricObjects\Disk.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="raytracer\build\leftover.txt" />

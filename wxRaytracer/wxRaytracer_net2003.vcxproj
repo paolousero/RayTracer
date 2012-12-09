@@ -94,6 +94,22 @@
     <ClCompile Include="raytracer\BRDFs\PerfectSpecular.cpp" />
     <ClCompile Include="raytracer\Cameras\Camera.cpp" />
     <ClCompile Include="raytracer\Cameras\Pinhole.cpp" />
+    <ClCompile Include="raytracer\GeometricObjects\Disk.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <MinimalRebuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</MinimalRebuild>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Default</BasicRuntimeChecks>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Async</ExceptionHandling>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <MinimalRebuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</MinimalRebuild>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Default</BasicRuntimeChecks>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Async</ExceptionHandling>
+    </ClCompile>
     <ClCompile Include="raytracer\GeometricObjects\GeometricObject.cpp" />
     <ClCompile Include="raytracer\GeometricObjects\Plane.cpp" />
     <ClCompile Include="raytracer\GeometricObjects\Sphere.cpp" />
@@ -146,6 +162,9 @@
     <ClInclude Include="raytracer\BRDFs\PerfectSpecular.h" />
     <ClInclude Include="raytracer\Cameras\Camera.h" />
     <ClInclude Include="raytracer\Cameras\Pinhole.h" />
+    <ClInclude Include="raytracer\GeometricObjects\Disk.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="raytracer\GeometricObjects\GeometricObject.h" />
     <ClInclude Include="raytracer\GeometricObjects\Plane.h" />
     <ClInclude Include="raytracer\GeometricObjects\Sphere.h" />
