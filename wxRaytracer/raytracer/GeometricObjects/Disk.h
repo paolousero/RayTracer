@@ -10,7 +10,7 @@ class Disk: public GeometricObject {
 	
 		Disk(void);   												// default constructor
 		
-		Disk(const Point3D& point, const Normal& normal);			// constructor	
+		Disk(const Point3D& center, const Normal& normal, const double& r);			// constructor	
 	
 		Disk(const Disk& disk); 									// copy constructor
 		
@@ -31,8 +31,9 @@ class Disk: public GeometricObject {
 		
 	private:
 	
-		Point3D 	a;   				// point through which plane passes 
+		Point3D 	center;   				// point through which plane passes 
 		Normal 		n;					// normal to the plane
+		double		r;
 				
 		static const double kEpsilon;   // for shadows and secondary rays
 };

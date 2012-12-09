@@ -6,17 +6,19 @@ const double Disk::kEpsilon = 0.001;
 
 Disk::Disk(void)	
 	: 	GeometricObject(),
-		a(0.0),
-		n(0, 1, 0)						
+		center(0.0),
+		n(0, 1, 0),
+		r(1.0)
 {}
 
 
 // ----------------------------------------------------------------------  constructor
 
-Disk::Disk(const Point3D& point, const Normal& normal)
+Disk::Disk(const Point3D& point, const Normal& normal, const double& radius)
 	:	GeometricObject(),
-		a(point),
-		n(normal)
+		center(point),
+		n(normal),
+		r(radius)
 {
 		n.normalize();
 }
@@ -26,8 +28,9 @@ Disk::Disk(const Point3D& point, const Normal& normal)
 
 Disk::Disk(const Disk& disk) 
 	:	GeometricObject(disk),
-		a(disk.a),
-		n(disk.n) 				
+		center(disk.center),
+		n(disk.n),
+		r(disk.r)
 {}
 
 
@@ -49,8 +52,9 @@ Disk::operator= (const Disk& rhs)	{
 
 	GeometricObject::operator= (rhs);
 
-	a = rhs.a;
+	center = rhs.center;
 	n = rhs.n;
+	r = rhs.r;
 
 	return (*this);
 }
@@ -66,19 +70,22 @@ Disk::~Disk(void)
 
 bool 															 
 Disk::hit(const Ray& ray, double& tmin, ShadeRec& sr) const {	
+	float t = (center - ray.o)*n/(ray.d*n);
 
-	double dil = 150;
-	float t = (a - ray.o) * n / (ray.d * n); 
-	//float t = (0.5)*(1+sin(((ray.d.x/dil)*(ray.d.x/dil)*(ray.d.y/dil)*(ray.d.y/dil)*(180/3.14))*1.0));												
-	if (t > kEpsilon) {
+	if(t <=kEpsilon)
+		return false;
+
+	Point3D p = ray.o + t*ray.d;
+
+	if(center.d_squared(p) < r*r){
 		tmin = t;
 		sr.normal = n;
-		sr.local_hit_point = ray.o + t * ray.d;
-		
-		return (true);	
+		sr.local_hit_point = p;
+		return (true);
 	}
 
-	return(false);
+	else
+		return (false);
 }
 
 
@@ -86,12 +93,18 @@ Disk::hit(const Ray& ray, double& tmin, ShadeRec& sr) const {
 bool
 Disk::shadow_hit(const Ray& ray, float& tmin) const
 {
-	float t = (a - ray.o)*n/(ray.d*n);
+	float t = (center - ray.o)*n/(ray.d * n);
 
-	if(t > kEpsilon){
+	if(t <=kEpsilon)
+		return false;
+
+	Point3D p = ray.o + t*ray.d;
+
+	if(center.d_squared(p) < r*r){
 		tmin = t;
 		return (true);
 	}
+
 	else
 		return (false);
 }
