@@ -89,8 +89,8 @@ World::build(void) {
 	RGBColor red(.8,0,0);
 	RGBColor lightblue(0.8,0.8,1.0);
 
-	vp.set_hres(500);
-	vp.set_vres(500);
+	vp.set_hres(800);
+	vp.set_vres(800);
 	vp.set_pixel_size(1.0);
 	vp.set_samples(num_samples);
 	
@@ -111,9 +111,9 @@ World::build(void) {
 	// camera
 	
 	Pinhole* pinhole_ptr = new Pinhole;
-	pinhole_ptr->set_eye(0, 2, 5); 
-	pinhole_ptr->set_lookat(0.0);
-	pinhole_ptr->set_view_distance(600.0);
+	pinhole_ptr->set_eye(0, .7, 5); 
+	pinhole_ptr->set_lookat(0,.2,0);
+	pinhole_ptr->set_view_distance(1700.0);
 	pinhole_ptr->compute_uvw();     
 	set_camera(pinhole_ptr);
 
@@ -134,7 +134,7 @@ World::build(void) {
 	add_light(light_ptr2);
 	*/
 	PointLight* point_ptr1 = new PointLight;
-	point_ptr1->set_location(0,1,0);
+	point_ptr1->set_location(0,1.5,2);
 	point_ptr1->set_color(white);
 	point_ptr1->scale_radiance(5);
 	point_ptr1->set_shadows(true);
@@ -231,9 +231,9 @@ World::build(void) {
 		reflective_ptr2->set_exp(100);
 		reflective_ptr2->set_kr(0.75);
 		reflective_ptr2->set_cr(white);
-		faces2[x][0].z -=5;
-		faces2[x][1].z -=5;
-		faces2[x][2].z -=5;
+		faces2[x][0].z -=2;
+		faces2[x][1].z -=2;
+		faces2[x][2].z -=2;
 
 		Triangle*	triangle_ptr2 = new Triangle(faces2[x][0],faces2[x][1],faces2[x][2]); 
 		//Triangle*	triangle_ptr = new Triangle(a,b,c); 
@@ -249,4 +249,16 @@ World::build(void) {
 		Plane* plane_ptr1 = new Plane(Point3D(0.0,0.0,0.0), Normal(0.0,1.0,0.0));
 		plane_ptr1->set_material(matte_ptr1);
 		add_object(plane_ptr1);
+
+		Phong* phong_ptr4 = new Phong;
+	phong_ptr4->set_ka(.7);
+	phong_ptr4->set_kd(kd);
+	phong_ptr4->set_cd(red);
+	phong_ptr4->set_cds(red);
+	phong_ptr4->set_exp(exp);
+	phong_ptr4->set_ks(ks);
+
+		OpenCylinder* cyl_ptr1 = new OpenCylinder(0.3,0.3,0.3);
+		cyl_ptr1->set_material(phong_ptr4);
+		add_object(cyl_ptr1);
 }

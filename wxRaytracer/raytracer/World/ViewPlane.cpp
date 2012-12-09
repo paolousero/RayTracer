@@ -12,7 +12,7 @@ ViewPlane::ViewPlane(void)
 		gamma(1.0),
 		inv_gamma(1.0),
 		show_out_of_gamut(false),
-		max_depth(1)
+		max_depth(3)
 {}
 
 

@@ -144,6 +144,8 @@
     <ClCompile Include="raytracer\Materials\Reflective.cpp" />
     <ClCompile Include="raytracer\GeometricObjects\Disk.cpp" />
     <ClCompile Include="raytracer\GeometricObjects\Compound.cpp" />
+    <ClCompile Include="raytracer\GeometricObjects\SolidCylinder.cpp" />
+    <ClCompile Include="raytracer\GeometricObjects\OpenCylinder.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="raytracer\BRDFs\BRDF.h">
@@ -251,6 +253,8 @@
     <ClInclude Include="raytracer\Materials\Reflective.h" />
     <ClInclude Include="raytracer\GeometricObjects\Disk.h" />
     <ClInclude Include="raytracer\GeometricObjects\Compound.h" />
+    <ClInclude Include="raytracer\GeometricObjects\SolidCylinder.h" />
+    <ClInclude Include="raytracer\GeometricObjects\OpenCylinder.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="raytracer\build\leftover.txt" />

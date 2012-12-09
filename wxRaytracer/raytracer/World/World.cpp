@@ -12,6 +12,8 @@
 #include "Triangle.h"
 #include "Disk.h"
 #include "Compound.h"
+#include "OpenCylinder.h"
+#include "SolidCylinder.h"
 
 //readers
 

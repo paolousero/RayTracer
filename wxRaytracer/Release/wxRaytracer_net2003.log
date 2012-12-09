@@ -1,17 +1,9 @@
-﻿Build started 12/9/2012 2:22:19 AM.
+﻿Build started 12/9/2012 4:57:34 AM.
      1>Project "C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\wxRaytracer_net2003.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Touching "Release\wxRaytracer.unsuccessfulbuild".
+         Creating "Release\wxRaytracer.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IwxWidgets\include /IwxWidgets\msw /Iraytracer\BRDFs /Iraytracer\BTDFs /Iraytracer\build /Iraytracer\Cameras /Iraytracer\GeometricObjects /Iraytracer\Lights /Iraytracer\Mappings /Iraytracer\Materials /Iraytracer\Noises /Iraytracer\Samplers /Iraytracer\Textures /Iraytracer\Tracers /Iraytracer\UserInterface /Iraytracer\Utilities /Iraytracer\World /Zi /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D WINVER=0x0400 /D wxUSE_GUI=1 /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt raytracer\GeometricObjects\Compound.cpp raytracer\World\World.cpp
-         Compound.cpp
-     1>c:\users\jpu5045\desktop\raytracer\raytracer\wxraytracer\raytracer\utilities\RGBColor.h(142): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\Utilities\ShadeRec.h(18): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\Utilities\Constants.h(21): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\Utilities\Constants.h(21): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\Utilities\Constants.h(23): warning C4305: 'initializing' : truncation from 'double' to 'const float'
-     1>raytracer\GeometricObjects\Compound.cpp(74): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>raytracer\GeometricObjects\Compound.cpp(91): warning C4244: '=' : conversion from 'const double' to 'float', possible loss of data
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IwxWidgets\include /IwxWidgets\msw /Iraytracer\BRDFs /Iraytracer\BTDFs /Iraytracer\build /Iraytracer\Cameras /Iraytracer\GeometricObjects /Iraytracer\Lights /Iraytracer\Mappings /Iraytracer\Materials /Iraytracer\Noises /Iraytracer\Samplers /Iraytracer\Textures /Iraytracer\Tracers /Iraytracer\UserInterface /Iraytracer\Utilities /Iraytracer\World /Zi /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D WINVER=0x0400 /D wxUSE_GUI=1 /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt raytracer\World\World.cpp
          World.cpp
      1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\Utilities\Constants.h(21): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\Utilities\Constants.h(21): warning C4305: 'argument' : truncation from 'double' to 'float'
@@ -22,6 +14,8 @@
      1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(89): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(90): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(90): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(114): warning C4305: 'argument' : truncation from 'double' to 'const float'
+     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(115): warning C4305: 'argument' : truncation from 'double' to 'const float'
      1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(144): warning C4305: 'initializing' : truncation from 'double' to 'float'
      1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(145): warning C4305: 'initializing' : truncation from 'double' to 'float'
      1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(146): warning C4305: 'initializing' : truncation from 'double' to 'float'
@@ -29,16 +23,11 @@
      1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(169): warning C4305: 'argument' : truncation from 'double' to 'const float'
      1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(186): warning C4305: 'argument' : truncation from 'double' to 'const float'
      1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(214): warning C4018: '<' : signed/unsigned mismatch
-         Generating Code...
-         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IwxWidgets\include /IwxWidgets\msw /Iraytracer\BRDFs /Iraytracer\BTDFs /Iraytracer\build /Iraytracer\Cameras /Iraytracer\GeometricObjects /Iraytracer\Lights /Iraytracer\Mappings /Iraytracer\Materials /Iraytracer\Noises /Iraytracer\Samplers /Iraytracer\Textures /Iraytracer\Tracers /Iraytracer\UserInterface /Iraytracer\Utilities /Iraytracer\World /Zi /clr /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D WINVER=0x0400 /D wxUSE_GUI=1 /Gm- /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt raytracer\Materials\Phong.cpp
-         Phong.cpp
-     1>c:\users\jpu5045\desktop\raytracer\raytracer\wxraytracer\raytracer\world\ViewPlane.h(81): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\Utilities\RGBColor.h(142): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\Utilities\Constants.h(21): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\Utilities\Constants.h(21): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\Utilities\Constants.h(23): warning C4305: 'initializing' : truncation from 'double' to 'const float'
-     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\Utilities\ShadeRec.h(18): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>raytracer\Materials\Phong.cpp(70): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(254): warning C4305: 'argument' : truncation from 'double' to 'const float'
+     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(261): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(261): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(261): warning C4305: 'argument' : truncation from 'double' to 'float'
+         All outputs are up-to-date.
        Link:
          C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Release\wxRaytracer.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:wxWidgets\lib comctl32.lib rpcrt4.lib winmm.lib advapi32.lib wsock32.lib wxpng.lib wxzlib.lib wxjpeg.lib wxtiff.lib wxmsw28_core.lib wxbase28.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\wxRaytracer.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\Release\wxRaytracer.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Release\wxRaytracer.lib" /MACHINE:X86 Release\BRDF.obj
          Release\GlossySpecular.obj
@@ -49,7 +38,9 @@
          Release\Compound.obj
          Release\Disk.obj
          Release\GeometricObject.obj
+         Release\OpenCylinder.obj
          Release\Plane.obj
+         Release\SolidCylinder.obj
          Release\Sphere.obj
          Release\Triangle.obj
          Release\Ambient.obj
@@ -87,4 +78,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:08.12
+Time Elapsed 00:00:03.71
