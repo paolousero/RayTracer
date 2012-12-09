@@ -11,6 +11,7 @@
 #include "Sphere.h"
 #include "Triangle.h"
 #include "Disk.h"
+#include "Compound.h"
 
 //readers
 
