@@ -10,6 +10,7 @@
 #include "Plane.h"
 #include "Sphere.h"
 #include "Triangle.h"
+#include "Disk.h"
 
 //readers
 

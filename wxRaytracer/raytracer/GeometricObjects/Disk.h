@@ -18,7 +18,7 @@ class Disk: public GeometricObject {
 		clone(void) const;
 
 		Disk& 														// assignment operator
-		operator= (const Plane& rhs);	
+		operator= (const Disk& rhs);	
 		
 		virtual														// destructor
 		~Disk(void);   											

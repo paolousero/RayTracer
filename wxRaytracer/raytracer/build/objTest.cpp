@@ -164,7 +164,7 @@ World::build(void) {
 	triangle_ptr1->set_material(phong_ptr1);			
 	add_object(triangle_ptr1);
 
-	
+
 	Phong* phong_ptr2 = new Phong;
 	phong_ptr2->set_ka(.7);
 	phong_ptr2->set_kd(kd);
@@ -181,6 +181,21 @@ World::build(void) {
 	Triangle*	triangle_ptr5 = new Triangle(a,b,c); 
 	triangle_ptr5->set_material(phong_ptr2);			
 	add_object(triangle_ptr5);
+
+		Phong* phong_ptr3 = new Phong;
+	phong_ptr3->set_ka(.7);
+	phong_ptr3->set_kd(kd);
+	phong_ptr3->set_cd(brown);
+	phong_ptr3->set_cds(brown);
+	phong_ptr3->set_exp(exp);
+	phong_ptr3->set_ks(ks);
+	
+	Disk*	disk_ptr5 = new Disk(Point3D(-1.5,.2,0),Normal(.4,.4,.1),.8); 
+	disk_ptr5->set_material(phong_ptr3);			
+	add_object(disk_ptr5);
+
+
+
 
 		Reflective* reflective_ptr1 = new Reflective;
 		reflective_ptr1->set_ka(0.25);
