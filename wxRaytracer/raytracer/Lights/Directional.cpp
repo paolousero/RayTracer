@@ -67,3 +67,17 @@ Directional::L(ShadeRec& s) {
 }
 
 
+
+// ----------------------------------------------------------------------in_shadow
+bool
+Directional::in_shadow(const Ray& ray, ShadeRec& s)const{
+	float t = 0;
+	int num_objects = s.w.objects.size();
+	float d = Point3D(dir.x,dir.y,dir.z).distance(ray.o);
+
+	for(int j = 0;j<num_objects; j++)
+		if (s.w.objects[j]->shadow_hit(ray,t) && t < d)
+				return (true);
+	return (false);
+}
+

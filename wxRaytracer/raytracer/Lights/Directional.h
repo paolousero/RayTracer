@@ -48,6 +48,9 @@ class Directional: public Light {
 				
 		virtual RGBColor		
 		L(ShadeRec& sr);	
+
+		virtual bool
+		in_shadow(const Ray& ray, ShadeRec& sr)const;
 		
 	private:
 

@@ -27,7 +27,7 @@ World::build(void) {
 
 	background_color = black;			// default color - this can be left out
 	
-	tracer_ptr = new RayCast(this); 
+	tracer_ptr = new Whitted(this); 
 
 	
 	// camera

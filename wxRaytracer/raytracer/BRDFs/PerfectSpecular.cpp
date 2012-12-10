@@ -76,7 +76,6 @@ PerfectSpecular::f(const ShadeRec& sr, const Vector3D& wo, const Vector3D& wi) c
 
 
 // ---------------------------------------------------------------------- rho
-
 RGBColor
 PerfectSpecular::rho(const ShadeRec& sr, const Vector3D& wo) const {
 	return (kd * cd);

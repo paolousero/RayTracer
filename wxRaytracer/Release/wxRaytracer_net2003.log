@@ -1,4 +1,4 @@
-﻿Build started 12/9/2012 4:57:34 AM.
+﻿Build started 12/10/2012 2:39:51 PM.
      1>Project "C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\wxRaytracer_net2003.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Release\wxRaytracer.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -14,19 +14,17 @@
      1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(89): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(90): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(90): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(114): warning C4305: 'argument' : truncation from 'double' to 'const float'
-     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(115): warning C4305: 'argument' : truncation from 'double' to 'const float'
-     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(144): warning C4305: 'initializing' : truncation from 'double' to 'float'
      1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(145): warning C4305: 'initializing' : truncation from 'double' to 'float'
      1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(146): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(151): warning C4305: 'argument' : truncation from 'double' to 'const float'
-     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(169): warning C4305: 'argument' : truncation from 'double' to 'const float'
-     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(186): warning C4305: 'argument' : truncation from 'double' to 'const float'
-     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(214): warning C4018: '<' : signed/unsigned mismatch
-     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(254): warning C4305: 'argument' : truncation from 'double' to 'const float'
-     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(261): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(261): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(261): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(147): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(152): warning C4305: 'argument' : truncation from 'double' to 'const float'
+     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(170): warning C4305: 'argument' : truncation from 'double' to 'const float'
+     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(187): warning C4305: 'argument' : truncation from 'double' to 'const float'
+     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(215): warning C4018: '<' : signed/unsigned mismatch
+     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(255): warning C4305: 'argument' : truncation from 'double' to 'const float'
+     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(262): warning C4305: 'argument' : truncation from 'double' to 'const float'
+     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(262): warning C4305: 'argument' : truncation from 'double' to 'const float'
+     1>C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\raytracer\build\objTest.cpp(262): warning C4305: 'argument' : truncation from 'double' to 'const float'
          All outputs are up-to-date.
        Link:
          C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Release\wxRaytracer.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:wxWidgets\lib comctl32.lib rpcrt4.lib winmm.lib advapi32.lib wsock32.lib wxpng.lib wxzlib.lib wxjpeg.lib wxtiff.lib wxmsw28_core.lib wxbase28.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\wxRaytracer.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\Release\wxRaytracer.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Release\wxRaytracer.lib" /MACHINE:X86 Release\BRDF.obj
@@ -78,4 +76,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.71
+Time Elapsed 00:00:10.41

@@ -21,7 +21,7 @@ World::build(void) {
 		int faceNum2 = 0;
 		int vertInFace2;
 
-		ifstream objFile2 ("vox.obj");
+		ifstream objFile2 ("spline.obj");
 
 		if(!objFile2){
 			//cout<<"There is an error.";
@@ -111,9 +111,9 @@ World::build(void) {
 	// camera
 	
 	Pinhole* pinhole_ptr = new Pinhole;
-	pinhole_ptr->set_eye(0, .7, 5); 
-	pinhole_ptr->set_lookat(0,.2,0);
-	pinhole_ptr->set_view_distance(1700.0);
+	pinhole_ptr->set_eye(0, 2, 6); 
+	pinhole_ptr->set_lookat(0,0,0);
+	pinhole_ptr->set_view_distance(800.0);
 	pinhole_ptr->compute_uvw();     
 	set_camera(pinhole_ptr);
 
@@ -126,27 +126,28 @@ World::build(void) {
 	light_ptr1->scale_radiance(4); 	
 	add_light(light_ptr1);
 	
-	
-	Directional* light_ptr2 = new Directional;
-	light_ptr2->set_direction(-100, -100, 100);
-	light_ptr2->set_color(red);
-	light_ptr2->scale_radiance(4); 	
-	add_light(light_ptr2);
 	*/
+	Directional* light_ptr2 = new Directional;
+	light_ptr2->set_direction(1, 1, 1);
+	light_ptr2->set_color(white);
+	light_ptr2->scale_radiance(4); 	
+	light_ptr2->set_shadows(true);
+	add_light(light_ptr2);
+	/*
 	PointLight* point_ptr1 = new PointLight;
 	point_ptr1->set_location(0,1.5,2);
 	point_ptr1->set_color(white);
 	point_ptr1->scale_radiance(5);
 	point_ptr1->set_shadows(true);
 	add_light(point_ptr1);
-
+	*/
 	//objects
 	float ka = .2;
 	float kd = .9;
 	float ks = .1;
 	float exp = 25;
 	
-
+	
 	Phong* phong_ptr1 = new Phong;
 	phong_ptr1->set_ka(.7);
 	phong_ptr1->set_kd(kd);
@@ -196,7 +197,7 @@ World::build(void) {
 
 
 
-
+	
 		Reflective* reflective_ptr1 = new Reflective;
 		reflective_ptr1->set_ka(0.25);
 		reflective_ptr1->set_kd(.5);
@@ -209,7 +210,7 @@ World::build(void) {
 	Sphere* sphere_ptr = new Sphere(Point3D(-0.5,0.5,0), .3);
 	sphere_ptr->set_material(reflective_ptr1);
 	add_object(sphere_ptr);
-
+	
 	
 		for(int x =0;x<faces2.size();x++)
 		{
@@ -249,7 +250,7 @@ World::build(void) {
 		Plane* plane_ptr1 = new Plane(Point3D(0.0,0.0,0.0), Normal(0.0,1.0,0.0));
 		plane_ptr1->set_material(matte_ptr1);
 		add_object(plane_ptr1);
-
+		
 		Phong* phong_ptr4 = new Phong;
 	phong_ptr4->set_ka(.7);
 	phong_ptr4->set_kd(kd);
@@ -258,7 +259,7 @@ World::build(void) {
 	phong_ptr4->set_exp(exp);
 	phong_ptr4->set_ks(ks);
 
-		OpenCylinder* cyl_ptr1 = new OpenCylinder(0.3,0.3,0.3);
+		SolidCylinder* cyl_ptr1 = new SolidCylinder(0.3,0.3,0.3);
 		cyl_ptr1->set_material(phong_ptr4);
 		add_object(cyl_ptr1);
 }

@@ -39,5 +39,5 @@ Light::L(ShadeRec& s) {
 // ----------------------------------------------------------------------in_shadow
 bool
 Light::in_shadow(const Ray& ray, ShadeRec& s)const{
-	return true;
+	return false;
 }

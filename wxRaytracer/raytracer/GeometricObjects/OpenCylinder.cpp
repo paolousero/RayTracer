@@ -72,11 +72,13 @@ OpenCylinder::~OpenCylinder(void) {}
 bool
 OpenCylinder::hit(const Ray& ray, double& tmin, ShadeRec& sr) const {
 	double 		t;
+	double		y;
 	//Vector3D	temp 	= ray.o - center;
 	double 		a 		= (ray.d.x*ray.d.x) + (ray.d.z*ray.d.z);
-	double 		b 		= 2.0 *(ray.o.x*ray.d.x) + (ray.o.z*ray.d.z);
+	double 		b 		= 2.0 *(ray.o.x*ray.d.x + ray.o.z*ray.d.z);
 	double 		c 		= (ray.o.x*ray.o.x) + (ray.o.z*ray.o.z) - radius * radius;
 	double 		disc	= b * b - 4.0 * a * c;
+	Normal norm = Normal(sr.hit_point.x/radius*1.0,0,sr.hit_point.z/radius*1.0);
 	
 	if (disc < 0.0)
 		return(false);
@@ -84,22 +86,23 @@ OpenCylinder::hit(const Ray& ray, double& tmin, ShadeRec& sr) const {
 		double e = sqrt(disc);
 		double denom = 2.0 * a;
 		t = (-b - e) / denom;    // smaller root
-	
-		if(t > kEpsilon) {
+		y = ray.o.y+t*ray.d.y;
+
+		if(t > kEpsilon && bottom<y<top) {
 			tmin = t;
-			
 			sr.local_hit_point = ray.o + t * ray.d;
-			sr.normal 	= Normal(sr.local_hit_point.x/radius*1.0,0,sr.local_hit_point.z/radius*1.0);
+			sr.normal 	= norm;
 			return (true);
 		} 
 	
 		t = (-b + e) / denom;    // larger root
-	
-		if(t > kEpsilon) {
+		y = ray.o.y+t*ray.d.y;
+
+		if(t > kEpsilon&& bottom<y<top) {
 			tmin = t;
 			
 			sr.local_hit_point = ray.o + t * ray.d;
-			sr.normal   =  Normal(sr.local_hit_point.x/radius*1.0,0,sr.local_hit_point.z/radius*1.0);
+			sr.normal   =  norm;
 			return (true);
 		} 
 	}
@@ -112,10 +115,10 @@ OpenCylinder::hit(const Ray& ray, double& tmin, ShadeRec& sr) const {
 bool
 OpenCylinder::shadow_hit(const Ray& ray, float& tmin)const
 {
-		double 		t;
+	double 		t;
 	//Vector3D	temp 	= ray.o - center;
 	double 		a 		= (ray.d.x*ray.d.x) + (ray.d.z*ray.d.z);
-	double 		b 		= 2.0 *(ray.o.x*ray.d.x) + (ray.o.z*ray.d.z);
+	double 		b 		= 2.0 *(ray.o.x*ray.d.x + ray.o.z*ray.d.z);
 	double 		c 		= (ray.o.x*ray.o.x) + (ray.o.z*ray.o.z) - radius * radius;
 	double 		disc	= b * b - 4.0 * a * c;
 	

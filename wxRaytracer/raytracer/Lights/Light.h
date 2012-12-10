@@ -33,7 +33,7 @@ class Light {
 		L(ShadeRec& sr);
 
 
-		void
+		virtual void
 		set_shadows(bool s);
 
 		virtual bool

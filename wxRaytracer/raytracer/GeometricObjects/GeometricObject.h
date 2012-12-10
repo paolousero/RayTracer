@@ -6,6 +6,7 @@ class Material;
 #include "Point3D.h"
 #include "Ray.h"
 #include "ShadeRec.h"
+#include "BBox.h"
 
 
 //----------------------------------------------------------------------------------------------------- Class GeometricObject
@@ -36,6 +37,9 @@ class GeometricObject {
 		virtual void 							// needs to virtual so that it can be overriden in Compound
 		set_material(Material* mPtr); 			
 
+		virtual BBox
+		get_bounding_box(void);
+
 	
 	protected:
 	
@@ -52,5 +56,11 @@ inline Material*
 GeometricObject::get_material(void) const {
 	return (material_ptr);
 }
+
+inline BBox
+GeometricObject::get_bounding_box(void){
+	return BBox();
+}
+
 
 #endif
