@@ -1,7 +1,6 @@
-
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual C++ Express 2005
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wxRaytracer", "wxRaytracer\wxRaytracer_vcpp2005ee.vcproj", "{7B411091-CB1C-4663-A16E-30D3FC0207AE}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wxRaytracer", "wxRaytracer\wxRaytracer_vcpp2005ee.vcxproj", "{7B411091-CB1C-4663-A16E-30D3FC0207AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

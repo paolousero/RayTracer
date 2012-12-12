@@ -2,6 +2,7 @@
 #define __CYLINDER__
 
 #include "Compound.h"
+#include "BBox.h"
 #include <vector>
 
 class SolidCylinder: public Compound
@@ -34,11 +35,15 @@ public:
 		void
 		set_material(Material* material_ptr);
 
+		BBox
+		get_bounding_box(void);
+
 	private:
 	
 		float bottom;
 		float top;
 		float radius;
+		BBox			box;
 		static const double kEpsilon;   // for shadows and secondary rays
 };
 
@@ -50,5 +55,10 @@ SolidCylinder::add_object(GeometricObject* object_ptr)
 
 }
 
+inline
+BBox
+SolidCylinder::get_bounding_box() {
+	return box;
+}
 
 #endif

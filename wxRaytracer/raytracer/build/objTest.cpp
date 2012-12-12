@@ -15,13 +15,15 @@ World::build(void) {
 		//////////////////========================================
 	
 		string current2;
+
 		vector<Point3D> verts2;
 		vector<vector<Point3D>> faces2;
+
 		int vertNum2 = 0;
 		int faceNum2 = 0;
 		int vertInFace2;
 
-		ifstream objFile2 ("spline.obj");
+		ifstream objFile2 ("vox.obj");
 
 		if(!objFile2){
 			//cout<<"There is an error.";
@@ -54,22 +56,16 @@ World::build(void) {
 
 					string temp;
 					istringstream s(current2.substr(2));
-					//temp = temp.substr(0,1);
-						//vertInFace = atoi(temp.c_str())-1;
-						//there are still tokens in the current face line, 
-						//keep parsing s and extracting verts.
-					    //onst char* t = temp[0];
-						//int x = atoi(t);
-						//cout<<faces[faceNum].back();
+
 					while(s.good())
 					{
 						s >> temp;
 						
 						char *copy = strdup(temp.c_str());
 						vertInFace2 = atoi(strtok(copy, "/"));
+						
 
-
-						faces2[faceNum2].push_back(verts2[vertInFace2-1]);
+						faces2[faceNum2].push_back(        verts2[vertInFace2-1]     );
 
 
 					}
@@ -79,7 +75,13 @@ World::build(void) {
 		}	
 		
 	//////////////////========================================
-
+							//temp = temp.substr(0,1);
+						//vertInFace = atoi(temp.c_str())-1;
+						//there are still tokens in the current face line, 
+						//keep parsing s and extracting verts.
+					    //onst char* t = temp[0];
+						//int x = atoi(t);
+						//cout<<faces[faceNum].back();
 	int num_samples = 5; 
 	
 	// view plane  
@@ -104,8 +106,8 @@ World::build(void) {
 
 	background_color = black;			// default color - this can be left out
 	
-	//tracer_ptr = new RayCast(this); 
-	tracer_ptr = new Whitted(this);
+	tracer_ptr = new RayCast(this); 
+	//tracer_ptr = new Whitted(this);
 
 	
 	// camera
@@ -126,21 +128,21 @@ World::build(void) {
 	light_ptr1->scale_radiance(4); 	
 	add_light(light_ptr1);
 	
-	*/
+	
 	Directional* light_ptr2 = new Directional;
 	light_ptr2->set_direction(1, 1, 1);
 	light_ptr2->set_color(white);
 	light_ptr2->scale_radiance(4); 	
 	light_ptr2->set_shadows(true);
 	add_light(light_ptr2);
-	/*
+	*/
 	PointLight* point_ptr1 = new PointLight;
 	point_ptr1->set_location(0,1.5,2);
 	point_ptr1->set_color(white);
 	point_ptr1->scale_radiance(5);
 	point_ptr1->set_shadows(true);
 	add_light(point_ptr1);
-	*/
+	
 	//objects
 	float ka = .2;
 	float kd = .9;
@@ -214,16 +216,6 @@ World::build(void) {
 	
 		for(int x =0;x<faces2.size();x++)
 		{
-			/*
-		Phong* phong_ptr3 = new Phong;
-		phong_ptr3->set_ka(ka);
-		phong_ptr3->set_kd(kd);
-		phong_ptr3->set_cd(lightblue);
-		phong_ptr3->set_cds(white);
-		phong_ptr3->set_exp(exp);
-		phong_ptr3->set_ks(ks);
-		*/
-
 			Reflective* reflective_ptr2 = new Reflective;
 		reflective_ptr2->set_ka(0.25);
 		reflective_ptr2->set_kd(.5);
@@ -232,6 +224,7 @@ World::build(void) {
 		reflective_ptr2->set_exp(100);
 		reflective_ptr2->set_kr(0.75);
 		reflective_ptr2->set_cr(white);
+		
 		faces2[x][0].z -=2;
 		faces2[x][1].z -=2;
 		faces2[x][2].z -=2;
@@ -252,14 +245,14 @@ World::build(void) {
 		add_object(plane_ptr1);
 		
 		Phong* phong_ptr4 = new Phong;
-	phong_ptr4->set_ka(.7);
-	phong_ptr4->set_kd(kd);
-	phong_ptr4->set_cd(red);
-	phong_ptr4->set_cds(red);
-	phong_ptr4->set_exp(exp);
-	phong_ptr4->set_ks(ks);
+		phong_ptr4->set_ka(.7);
+		phong_ptr4->set_kd(kd);
+		phong_ptr4->set_cd(red);
+		phong_ptr4->set_cds(red);
+		phong_ptr4->set_exp(exp);
+		phong_ptr4->set_ks(ks);
 
-		SolidCylinder* cyl_ptr1 = new SolidCylinder(0.3,0.3,0.3);
+		SolidCylinder* cyl_ptr1 = new SolidCylinder(.4,0.8,0.2);
 		cyl_ptr1->set_material(phong_ptr4);
 		add_object(cyl_ptr1);
 }

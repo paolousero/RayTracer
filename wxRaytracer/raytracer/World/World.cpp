@@ -15,7 +15,9 @@
 #include "OpenCylinder.h"
 #include "SolidCylinder.h"
 
-//readers
+//samplers
+
+#include "Regular.h"
 
 // tracers
 
@@ -32,12 +34,14 @@
 
 #include "Directional.h"
 #include "PointLight.h"
+//#include "AmbientOccluder.h"
 
 // materials
 
 #include "Matte.h"
 #include "Phong.h"
 #include "Reflective.h"
+
 
 // utilities
 
@@ -57,6 +61,7 @@
 //#include "4_08.cpp"
 //#include "BuildFigure19_07.cpp"
 //#include "shadowbuild.cpp"
+//#include "boxtest.cpp"
 
 // -------------------------------------------------------------------- default constructor
 
@@ -279,3 +284,52 @@ World::delete_lights(void) {
 	lights.erase (lights.begin(), lights.end());
 }
 
+/*
+void
+World::build(void) {
+
+	vp.set_hres(400);
+	vp.set_vres(400);
+	vp.set_pixel_size(1.0);
+	vp.set_samples(16);
+
+	background_color = black;
+	tracer_ptr = new RayCast(this);
+
+	Ambient* ambient_ptr = new Ambient;
+	ambient_ptr->scale_radiance(1.0);
+	set_ambient_light(ambient_ptr);
+
+	Pinhole* pinhole_ptr = new Pinhole;
+	pinhole_ptr->set_eye(0, 0, 50); 
+	pinhole_ptr->set_lookat(0.0);
+	pinhole_ptr->set_view_distance(600.0);
+	pinhole_ptr->compute_uvw();     
+	set_camera(pinhole_ptr);
+	
+	PointLight* light_ptr2 = new PointLight;
+	light_ptr2->set_location(6, 6, 6);
+	light_ptr2->scale_radiance(6.0);
+	add_light(light_ptr2);
+	
+	
+		Directional* light_ptr2 = new Directional;
+	light_ptr2->set_direction(100, 50, 150);
+	light_ptr2->scale_radiance(6.0);
+	add_light(light_ptr2);
+	
+	Matte* matte_ptr1 = new Matte;
+	matte_ptr1->set_ka(0.25);
+	matte_ptr1->set_kd(0.65);
+	matte_ptr1->set_cd(1, 1, 0);
+	Sphere* sphere_ptr1 = new Sphere(Point3D(0, 0, 0), 5);
+	sphere_ptr1->set_material(matte_ptr1);
+	add_object(sphere_ptr1);
+
+
+
+
+
+}
+
+*/

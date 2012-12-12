@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BRDF" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAACAAAAAAAAAAAAABAAAAARAAAgEAAAAAA=</HashCode>
+      <FileName>raytracer\BRDFs\BRDF.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lambertian" Collapsed="true">
+    <Position X="9.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAATAQAgEAAJCAA=</HashCode>
+      <FileName>raytracer\BRDFs\Lambertian.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Camera" Collapsed="true">
+    <Position X="6.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACACAIIAWAAAAAQAAQAAIAAAAgAAAAABogEgAEAAA=</HashCode>
+      <FileName>raytracer\Cameras\Camera.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pinhole" Collapsed="true">
+    <Position X="6.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAIAAAAIAAAAABKAAAAAAAAECAAgEAAAAAA=</HashCode>
+      <FileName>raytracer\Cameras\Pinhole.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeometricObject" Collapsed="true">
+    <Position X="6.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQIAAAAAAgAAAAAAAAQgAAAAAAEAAAAgFAAAIAA=</HashCode>
+      <FileName>raytracer\GeometricObjects\GeometricObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Plane" Collapsed="true">
+    <Position X="8" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAgAgAAAAAAAAAAAgEAIgEAAAIAA=</HashCode>
+      <FileName>raytracer\GeometricObjects\Plane.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sphere" Collapsed="true">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAkAAAAACAAAAgAAAAQgCAAAAAAAAAAAAAAgEAAIIAA=</HashCode>
+      <FileName>raytracer\GeometricObjects\Sphere.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ambient" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAEAAAAAAAAAEAAAAAAACACAIgEEQAAAA=</HashCode>
+      <FileName>raytracer\Lights\Ambient.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Directional" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAIAACAAAAAAAAAAAAEAAAAAAACACIKgEAQAgAA=</HashCode>
+      <FileName>raytracer\Lights\Directional.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Light" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAgAAAAAAAAAASCAgEAQAoAA=</HashCode>
+      <FileName>raytracer\Lights\Light.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Material" Collapsed="true">
+    <Position X="3.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAgEEAAAAA=</HashCode>
+      <FileName>raytracer\Materials\Material.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Matte" Collapsed="true">
+    <Position X="3.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABCAAAAAAAACAAAAAAAAAAAAAAAAAAQAgEEABAAI=</HashCode>
+      <FileName>raytracer\Materials\Matte.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ViewPlane" Collapsed="true">
+    <Position X="17.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACEIABCEAIAAAAAAAAABACAAAAAIAAAAAMAgIAAAAhA=</HashCode>
+      <FileName>raytracer\World\ViewPlane.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="World" Collapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIBgAAAABEAJAAAAEAAAEIIAQIKCAAAEJQAEAAAAAQ=</HashCode>
+      <FileName>raytracer\World\World.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Matrix" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAQAAAAAAAAAAAAAAAgAAAAAgAgAAAAAAA=</HashCode>
+      <FileName>raytracer\Utilities\Matrix.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Normal" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAQAAAAAAAAAQAAAAAIAAAAAABgAQAAAAA=</HashCode>
+      <FileName>raytracer\Utilities\Normal.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Point2D" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAIAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>raytracer\Utilities\Point2D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Point3D" Collapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQABAIAAAAAAAAAAAAAAAAAEAAAAAAAABgAQAAAAA=</HashCode>
+      <FileName>raytracer\Utilities\Point3D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ray" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAECAAgAAAAAAA=</HashCode>
+      <FileName>raytracer\Utilities\Ray.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RGBColor" Collapsed="true">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAARAAAAAAAAAIAQUhAAAgAAA=</HashCode>
+      <FileName>raytracer\Utilities\RGBColor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShadeRec" Collapsed="true">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAIACAAAAQAAAAAAAwAAAAAAACAAAwAIAAAIAA=</HashCode>
+      <FileName>raytracer\Utilities\ShadeRec.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vector3D" Collapsed="true">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAQCAQAAEAQAQAAAAAAAAAAAABgAQAAAAA=</HashCode>
+      <FileName>raytracer\Utilities\Vector3D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wxraytracerapp" Collapsed="true">
+    <Position X="13.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAQAAQAAAAAAQAAAAA=</HashCode>
+      <FileName>raytracer\UserInterface\wxraytracer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wxraytracerFrame" Collapsed="true">
+    <Position X="15.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAACECAAAAAAAAADgAIAAAAAAAAAAAAACAE=</HashCode>
+      <FileName>raytracer\UserInterface\wxraytracer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RenderCanvas" Collapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAQAYAAAAAACEAAABAAAEQAAAACYAAAAhgIAAACAA=</HashCode>
+      <FileName>raytracer\UserInterface\wxraytracer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RenderPixel" Collapsed="true">
+    <Position X="15.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAABgAAAAAgA=</HashCode>
+      <FileName>raytracer\UserInterface\wxraytracer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RenderThread" Collapsed="true">
+    <Position X="17.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQQUAAAAAAAAAEAAAAAAAACAAAQAEAAACAAAAAAAAA=</HashCode>
+      <FileName>raytracer\UserInterface\wxraytracer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MultipleObjects" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAACAAAAAA=</HashCode>
+      <FileName>raytracer\Tracers\MultipleObjects.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RayCast" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>raytracer\Tracers\RayCast.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SingleSphere" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>raytracer\Tracers\SingleSphere.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tracer" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAQAAAAAAAAAAAAAAAAAAABAAAAAAAAQAAAA=</HashCode>
+      <FileName>raytracer\Tracers\Tracer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sampler" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACBABAAAAiAiAABABAAEUCAiAAJAEQAAAgEAAQgBA=</HashCode>
+      <FileName>raytracer\Sampler\Sampler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Regular" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAIAAAAEAAAAAAAAAAgEAAAAAA=</HashCode>
+      <FileName>raytracer\Sampler\Regular.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="__unnamed_enum_0022_1" Collapsed="true">
+    <Position X="12" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAIAQAAAAAAAAAAAAAAAAEAAAAAAABCAAAAAAA=</HashCode>
+      <FileName>raytracer\UserInterface\wxraytracer.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

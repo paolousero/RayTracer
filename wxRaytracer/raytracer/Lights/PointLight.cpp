@@ -1,3 +1,4 @@
+
 #include "PointLight.h"
 #include "ShadeRec.h"
 
@@ -76,4 +77,3 @@ PointLight::in_shadow(const Ray& ray, ShadeRec& s)const{
 				return (true);
 	return (false);
 }
-

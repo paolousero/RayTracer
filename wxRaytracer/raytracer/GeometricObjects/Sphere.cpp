@@ -97,7 +97,6 @@ Sphere::hit(const Ray& ray, double& tmin, ShadeRec& sr) const {
 			return (true);
 		} 
 	}
-
 	return (false);
 }
 

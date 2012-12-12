@@ -9,7 +9,7 @@ const double OpenCylinder::kEpsilon = 0.001;
 
 OpenCylinder::OpenCylinder(void)	
 	: 	GeometricObject(),
-		bottom(1.0),
+		bottom(-1.0),
 		top(1.0),
 		radius(1.0)
 {}
@@ -78,8 +78,8 @@ OpenCylinder::hit(const Ray& ray, double& tmin, ShadeRec& sr) const {
 	double 		b 		= 2.0 *(ray.o.x*ray.d.x + ray.o.z*ray.d.z);
 	double 		c 		= (ray.o.x*ray.o.x) + (ray.o.z*ray.o.z) - radius * radius;
 	double 		disc	= b * b - 4.0 * a * c;
-	Normal norm = Normal(sr.hit_point.x/radius*1.0,0,sr.hit_point.z/radius*1.0);
-	
+	Normal norm = Normal(sr.hit_point.x/radius*1.0, 0 ,sr.hit_point.z/radius*1.0);
+	Normal test = Normal(0,0,1);
 	if (disc < 0.0)
 		return(false);
 	else {	
@@ -88,21 +88,22 @@ OpenCylinder::hit(const Ray& ray, double& tmin, ShadeRec& sr) const {
 		t = (-b - e) / denom;    // smaller root
 		y = ray.o.y+t*ray.d.y;
 
-		if(t > kEpsilon && bottom<y<top) {
+		if(t > kEpsilon && bottom<y && y<top) {
 			tmin = t;
+			
 			sr.local_hit_point = ray.o + t * ray.d;
-			sr.normal 	= norm;
+			sr.normal 	= Normal(sr.local_hit_point.x/radius*1.0, 0 ,sr.local_hit_point.z/radius*1.0);
 			return (true);
 		} 
 	
 		t = (-b + e) / denom;    // larger root
 		y = ray.o.y+t*ray.d.y;
 
-		if(t > kEpsilon&& bottom<y<top) {
+		if(t > kEpsilon && bottom<y && y<top) {
 			tmin = t;
 			
 			sr.local_hit_point = ray.o + t * ray.d;
-			sr.normal   =  norm;
+			sr.normal   = Normal(sr.local_hit_point.x/radius*1.0, 0 ,sr.local_hit_point.z/radius*1.0);
 			return (true);
 		} 
 	}
@@ -116,11 +117,13 @@ bool
 OpenCylinder::shadow_hit(const Ray& ray, float& tmin)const
 {
 	double 		t;
+	double		y;
 	//Vector3D	temp 	= ray.o - center;
 	double 		a 		= (ray.d.x*ray.d.x) + (ray.d.z*ray.d.z);
 	double 		b 		= 2.0 *(ray.o.x*ray.d.x + ray.o.z*ray.d.z);
 	double 		c 		= (ray.o.x*ray.o.x) + (ray.o.z*ray.o.z) - radius * radius;
 	double 		disc	= b * b - 4.0 * a * c;
+	//Normal norm = Normal(sr.hit_point.x/radius*1.0,0,sr.hit_point.z/radius*1.0);
 	
 	if (disc < 0.0)
 		return(false);
@@ -128,20 +131,23 @@ OpenCylinder::shadow_hit(const Ray& ray, float& tmin)const
 		double e = sqrt(disc);
 		double denom = 2.0 * a;
 		t = (-b - e) / denom;    // smaller root
-	
-		if (t > kEpsilon) {
-			tmin = t;
-			//sr.normal 	 = (temp + t * ray.d) / radius;
+		y = ray.o.y+t*ray.d.y;
+
+		if(t > kEpsilon && bottom<y && y<top) {
+			//tmin = t;
 			//sr.local_hit_point = ray.o + t * ray.d;
+			//sr.normal 	= norm;
 			return (true);
 		} 
 	
 		t = (-b + e) / denom;    // larger root
-	
-		if (t > kEpsilon) {
-			tmin = t;
-			//sr.normal   = (temp + t * ray.d) / radius;
+		y = ray.o.y+t*ray.d.y;
+
+		if(t > kEpsilon && bottom<y && y<top) {
+			//tmin = t;
+			
 			//sr.local_hit_point = ray.o + t * ray.d;
+			//	sr.normal   =  norm;
 			return (true);
 		} 
 	}

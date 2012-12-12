@@ -10,25 +10,39 @@ SolidCylinder::SolidCylinder(void)
 	: 	Compound(),
 		bottom(1),
 		top(1),
-		radius(1)
-{}
+		radius(1),
+		box(Point3D(-1.0*radius,bottom , -1.0*radius),
+			Point3D(1.0*radius,top , 1.0*radius))
+{
+objects.push_back(new Disk(Point3D(0, bottom, 0),
+						Normal(0, -1, 0),
+						radius));
+
+	objects.push_back(new Disk(Point3D(0, top, 0),
+						Normal(0, 1, 0),
+						radius));
+
+	objects.push_back(new OpenCylinder(bottom,top,radius));
+}
 
 // ----------------------------------------------------------------------  constructor
 SolidCylinder::SolidCylinder(const float bot, const float t, const float r)
 	:	Compound(),
 		bottom(bot),
 		top(t),
-		radius(r)
+		radius(r),
+		box(Point3D(-1.0*r,bot , -1.0*r),
+			Point3D(1.0*r,t , 1.0*r))
 {
 	objects.push_back(new Disk(Point3D(0, bottom, 0),
 						Normal(0, -1, 0),
 						radius));
 
-	objects.push_back(new Disk(Point3D(0, bottom, 0),
+	objects.push_back(new Disk(Point3D(0, top, 0),
 						Normal(0, 1, 0),
 						radius));
 
-	objects.push_back(new OpenCylinder(bot,t,r));
+	objects.push_back(new OpenCylinder(bottom,top,radius));
 }
 
 // ---------------------------------------------------------------- copy constructor
@@ -36,8 +50,19 @@ SolidCylinder::SolidCylinder(const SolidCylinder& cyl)
 	:	Compound(cyl),
 		bottom(cyl.bottom),
 		top(cyl.top),
-		radius(cyl.radius)
-{}
+		radius(cyl.radius),
+		box(Point3D(-1.0*radius,bottom , -1.0*radius),
+			Point3D(1.0*radius,top , 1.0*radius))
+
+{objects.push_back(new Disk(Point3D(0, bottom, 0),
+						Normal(0, -1, 0),
+						radius));
+
+	objects.push_back(new Disk(Point3D(0, top, 0),
+						Normal(0, 1, 0),
+						radius));
+
+	objects.push_back(new OpenCylinder(bottom,top,radius));}
 
 // ---------------------------------------------------------------- clone
 SolidCylinder* 
@@ -73,28 +98,10 @@ SolidCylinder::~SolidCylinder(void)
 
 bool 															 
 SolidCylinder::hit(const Ray& ray, double& tmin, ShadeRec& sr)const {	
-	double point = 0.0;
-	double& t = point;
-	Normal normal;
-	Point3D local_hit_point;
-	bool hit = false;
-		tmin = kHugeValue;
-	int num_objects = objects.size();
-
-	for(int j = 0;j<num_objects;j++)
-		if(objects[j]->hit(ray,t,sr) && (t<tmin)){
-			hit = true;
-			tmin = t;
-			material_ptr = objects[j]->get_material();
-			normal = sr.normal;
-			local_hit_point = sr.local_hit_point;
-		}
-		if(hit){
-			sr.t=tmin;
-			sr.normal = normal;
-			sr.local_hit_point = local_hit_point;
-		}
-		return (hit);
+if(box.hit(ray))
+	return (Compound::hit(ray,tmin,sr));
+else
+	return (false);
 }
 
 
@@ -102,25 +109,10 @@ SolidCylinder::hit(const Ray& ray, double& tmin, ShadeRec& sr)const {
 bool
 SolidCylinder::shadow_hit(const Ray& ray, float& tmin) const
 {
-	float point = 0.0;
-	float& t = point;
-	Normal normal;
-	Point3D local_hit_point;
-	bool hit = false;
-		tmin = kHugeValue;
-	int num_objects = objects.size();
-
-	for(int j = 0;j<num_objects;j++)
-		if(objects[j]->shadow_hit(ray,t) && (t<tmin)){
-			hit = true;
-			tmin = t;
-			material_ptr = objects[j]->get_material();
-			//normal = sr.normal;
-			//local_hit_point = sr.local_hit_point;
-		}
-		if(hit){
-		}
-		return (hit);
+if(box.hit(ray))
+	return (Compound::shadow_hit(ray,tmin));
+else
+	return (false);
 }
 
 void

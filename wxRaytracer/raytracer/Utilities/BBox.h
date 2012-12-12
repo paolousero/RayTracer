@@ -20,8 +20,9 @@ class BBox{
 		BBox (const Point3D p0, const Point3D p1);					//constructor w/ Point3D
 
 		bool
-		hit(const Ray& ray);
+		hit(const Ray& ray) const;
 
+		virtual
 		~BBox (void);												//construcor
 };
 

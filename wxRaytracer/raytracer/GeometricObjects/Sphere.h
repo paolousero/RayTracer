@@ -4,6 +4,7 @@
 // This file contains the declaration of the class Sphere
 
 #include "GeometricObject.h"
+#include "BBox.h"
 
 //-------------------------------------------------------------------------------- class Sphere
 
@@ -40,12 +41,11 @@ class Sphere: public GeometricObject {
 
 		virtual bool
 		shadow_hit(const Ray& ray, float& tmin)const;
-		
+
 	private:
 	
 		Point3D 	center;   			// center coordinates as a point  
 		double 		radius;				// the radius 
-		
 		static const double kEpsilon;   // for shadows and secondary rays
 };
 
@@ -67,5 +67,4 @@ inline void
 Sphere::set_radius(const double r) {
 	radius = r;
 }
-
 #endif

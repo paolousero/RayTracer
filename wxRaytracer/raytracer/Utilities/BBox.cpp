@@ -27,9 +27,13 @@ BBox::BBox(const Point3D p0, const Point3D p1)
 {}
 
 
+// ---------------------------------------------------------------- destructor
+
+BBox::~BBox(void) {}
+
 //hit function
 bool
-BBox::hit(const Ray& ray)
+BBox::hit(const Ray& ray) const
 {
 //makes things easier to type later.
 	double ox = ray.o.x; double oy = ray.o.y; double oz = ray.o.z;

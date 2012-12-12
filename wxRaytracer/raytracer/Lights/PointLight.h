@@ -1,7 +1,9 @@
+
 #ifndef __POINTLIGHT__
 #define __POINTLIGHT__
 
 #include "Light.h"
+
 #include "Vector3D.h"
 #include "RGBColor.h"
 #include "Ray.h"
@@ -111,3 +113,4 @@ PointLight::set_location(float dx, float dy, float dz) {
 }
 
 #endif
+

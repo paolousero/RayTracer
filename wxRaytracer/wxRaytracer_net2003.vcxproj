@@ -101,6 +101,7 @@
     <ClCompile Include="raytracer\GeometricObjects\Plane.cpp" />
     <ClCompile Include="raytracer\GeometricObjects\SolidCylinder.cpp" />
     <ClCompile Include="raytracer\GeometricObjects\Sphere.cpp" />
+    <ClCompile Include="raytracer\GeometricObjects\SphereB.cpp" />
     <ClCompile Include="raytracer\GeometricObjects\Triangle.cpp" />
     <ClCompile Include="raytracer\Lights\Ambient.cpp" />
     <ClCompile Include="raytracer\Lights\Directional.cpp" />
@@ -157,6 +158,7 @@
     <ClInclude Include="raytracer\GeometricObjects\Plane.h" />
     <ClInclude Include="raytracer\GeometricObjects\SolidCylinder.h" />
     <ClInclude Include="raytracer\GeometricObjects\Sphere.h" />
+    <ClInclude Include="raytracer\GeometricObjects\SphereB.h" />
     <ClInclude Include="raytracer\GeometricObjects\Triangle.h" />
     <ClInclude Include="raytracer\Lights\Ambient.h" />
     <ClInclude Include="raytracer\Lights\Directional.h" />

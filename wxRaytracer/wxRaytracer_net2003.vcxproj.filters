@@ -60,9 +60,6 @@
     <ClCompile Include="raytracer\GeometricObjects\Plane.cpp">
       <Filter>Geometric Objects</Filter>
     </ClCompile>
-    <ClCompile Include="raytracer\GeometricObjects\Sphere.cpp">
-      <Filter>Geometric Objects</Filter>
-    </ClCompile>
     <ClCompile Include="raytracer\Lights\Ambient.cpp">
       <Filter>Lights</Filter>
     </ClCompile>
@@ -138,14 +135,36 @@
     <ClCompile Include="raytracer\GeometricObjects\Triangle.cpp">
       <Filter>Geometric Objects</Filter>
     </ClCompile>
-    <ClCompile Include="raytracer\Lights\PointLight.cpp" />
-    <ClCompile Include="raytracer\Tracers\Whitted.cpp" />
-    <ClCompile Include="raytracer\BRDFs\PerfectSpecular.cpp" />
-    <ClCompile Include="raytracer\Materials\Reflective.cpp" />
-    <ClCompile Include="raytracer\GeometricObjects\Disk.cpp" />
-    <ClCompile Include="raytracer\GeometricObjects\Compound.cpp" />
-    <ClCompile Include="raytracer\GeometricObjects\SolidCylinder.cpp" />
-    <ClCompile Include="raytracer\GeometricObjects\OpenCylinder.cpp" />
+    <ClCompile Include="raytracer\GeometricObjects\SphereB.cpp">
+      <Filter>Geometric Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\GeometricObjects\Sphere.cpp">
+      <Filter>Geometric Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\GeometricObjects\Compound.cpp">
+      <Filter>Geometric Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\GeometricObjects\Disk.cpp">
+      <Filter>Geometric Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\GeometricObjects\OpenCylinder.cpp">
+      <Filter>Geometric Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\BRDFs\PerfectSpecular.cpp">
+      <Filter>BRDFs</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\Lights\PointLight.cpp">
+      <Filter>Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\Materials\Reflective.cpp">
+      <Filter>Materials</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\GeometricObjects\SolidCylinder.cpp">
+      <Filter>Geometric Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="raytracer\Tracers\Whitted.cpp">
+      <Filter>Tracers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="raytracer\BRDFs\BRDF.h">
@@ -161,9 +180,6 @@
       <Filter>Cameras</Filter>
     </ClInclude>
     <ClInclude Include="raytracer\GeometricObjects\GeometricObject.h">
-      <Filter>Geometric Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="raytracer\GeometricObjects\Sphere.h">
       <Filter>Geometric Objects</Filter>
     </ClInclude>
     <ClInclude Include="raytracer\Lights\Ambient.h">
@@ -247,14 +263,36 @@
     <ClInclude Include="raytracer\GeometricObjects\Plane.h">
       <Filter>Geometric Objects</Filter>
     </ClInclude>
-    <ClInclude Include="raytracer\Lights\PointLight.h" />
-    <ClInclude Include="raytracer\Tracers\Whitted.h" />
-    <ClInclude Include="raytracer\BRDFs\PerfectSpecular.h" />
-    <ClInclude Include="raytracer\Materials\Reflective.h" />
-    <ClInclude Include="raytracer\GeometricObjects\Disk.h" />
-    <ClInclude Include="raytracer\GeometricObjects\Compound.h" />
-    <ClInclude Include="raytracer\GeometricObjects\SolidCylinder.h" />
-    <ClInclude Include="raytracer\GeometricObjects\OpenCylinder.h" />
+    <ClInclude Include="raytracer\GeometricObjects\SphereB.h">
+      <Filter>Geometric Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\GeometricObjects\Sphere.h">
+      <Filter>Geometric Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\GeometricObjects\Compound.h">
+      <Filter>Geometric Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\GeometricObjects\Disk.h">
+      <Filter>Geometric Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\GeometricObjects\OpenCylinder.h">
+      <Filter>Geometric Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\BRDFs\PerfectSpecular.h">
+      <Filter>BRDFs</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\Lights\PointLight.h">
+      <Filter>Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\Materials\Reflective.h">
+      <Filter>Materials</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\GeometricObjects\SolidCylinder.h">
+      <Filter>Geometric Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracer\Tracers\Whitted.h">
+      <Filter>Tracers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="raytracer\build\leftover.txt" />
