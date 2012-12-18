@@ -23,7 +23,7 @@ World::build(void) {
 		int faceNum2 = 0;
 		int vertInFace2;
 
-		ifstream objFile2 ("vox.obj");
+		ifstream objFile2 ("objMeshes/woah.obj");
 
 		if(!objFile2){
 			//cout<<"There is an error.";
@@ -82,8 +82,10 @@ World::build(void) {
 					    //onst char* t = temp[0];
 						//int x = atoi(t);
 						//cout<<faces[faceNum].back();
-	int num_samples = 5; 
-	
+	int num_samples = 1; 
+	//Regular* sample_ptr = (new Regular(num_samples));
+	//vp.set_sampler(sample_ptr);
+	vp.set_samples(num_samples);
 	// view plane  
 	  
 	RGBColor white(1.0);
@@ -94,26 +96,30 @@ World::build(void) {
 	vp.set_hres(800);
 	vp.set_vres(800);
 	vp.set_pixel_size(1.0);
-	vp.set_samples(num_samples);
+	//vp.set_samples(num_samples);
 	
 	// the ambient light here is the same as the default set in the World
 	// constructor, and can therefore be left out
-	/*
-	Ambient* ambient_ptr = new Ambient;
-	ambient_ptr->scale_radiance(1.0);
+	
+	MultiJittered* sampler_ptr = new MultiJittered(num_samples);
+
+	AmbientOccluder* ambient_ptr = new AmbientOccluder;
+	ambient_ptr->scale_radiance(3.0);
+	ambient_ptr->set_min_amount(0.0);
+	ambient_ptr->set_sampler(sampler_ptr);
 	set_ambient_light(ambient_ptr); 
-	*/
+	
 
 	background_color = black;			// default color - this can be left out
 	
-	tracer_ptr = new RayCast(this); 
-	//tracer_ptr = new Whitted(this);
+	//tracer_ptr = new RayCast(this); 
+	tracer_ptr = new Whitted(this);
 
 	
 	// camera
 	
 	Pinhole* pinhole_ptr = new Pinhole;
-	pinhole_ptr->set_eye(0, 2, 6); 
+	pinhole_ptr->set_eye(0, 2, 10); 
 	pinhole_ptr->set_lookat(0,0,0);
 	pinhole_ptr->set_view_distance(800.0);
 	pinhole_ptr->compute_uvw();     
@@ -136,19 +142,28 @@ World::build(void) {
 	light_ptr2->set_shadows(true);
 	add_light(light_ptr2);
 	*/
+	
 	PointLight* point_ptr1 = new PointLight;
-	point_ptr1->set_location(0,1.5,2);
-	point_ptr1->set_color(white);
-	point_ptr1->scale_radiance(5);
+	point_ptr1->set_location(.2,1.5,2);
+	point_ptr1->set_color(red);
+	point_ptr1->scale_radiance(3);
 	point_ptr1->set_shadows(true);
 	add_light(point_ptr1);
+	
+
+		PointLight* point_ptr2 = new PointLight;
+	point_ptr2->set_location(-.2,1.5,-2);
+	point_ptr2->set_color(white);
+	point_ptr2->scale_radiance(2.0);
+	point_ptr2->set_shadows(true);
+	add_light(point_ptr2);
 	
 	//objects
 	float ka = .2;
 	float kd = .9;
 	float ks = .1;
 	float exp = 25;
-	
+	/*
 	
 	Phong* phong_ptr1 = new Phong;
 	phong_ptr1->set_ka(.7);
@@ -212,18 +227,18 @@ World::build(void) {
 	Sphere* sphere_ptr = new Sphere(Point3D(-0.5,0.5,0), .3);
 	sphere_ptr->set_material(reflective_ptr1);
 	add_object(sphere_ptr);
-	
+	*/
 	
 		for(int x =0;x<faces2.size();x++)
 		{
-			Reflective* reflective_ptr2 = new Reflective;
+			Phong* reflective_ptr2 = new Phong;
 		reflective_ptr2->set_ka(0.25);
 		reflective_ptr2->set_kd(.5);
 		reflective_ptr2->set_cd(yellow);
 		reflective_ptr2->set_cds(yellow);
 		reflective_ptr2->set_exp(100);
-		reflective_ptr2->set_kr(0.75);
-		reflective_ptr2->set_cr(white);
+		//reflective_ptr2->set_kr(0.75);
+		//reflective_ptr2->set_cr(white);
 		
 		faces2[x][0].z -=2;
 		faces2[x][1].z -=2;
@@ -244,6 +259,7 @@ World::build(void) {
 		plane_ptr1->set_material(matte_ptr1);
 		add_object(plane_ptr1);
 		
+		/*
 		Phong* phong_ptr4 = new Phong;
 		phong_ptr4->set_ka(.7);
 		phong_ptr4->set_kd(kd);
@@ -255,4 +271,5 @@ World::build(void) {
 		SolidCylinder* cyl_ptr1 = new SolidCylinder(.4,0.8,0.2);
 		cyl_ptr1->set_material(phong_ptr4);
 		add_object(cyl_ptr1);
+		*/
 }

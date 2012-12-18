@@ -16,6 +16,7 @@
 #include "Maths.h"
 
 using namespace std;
+
 class Sampler {	
 	public:	
 		
@@ -81,7 +82,23 @@ class Sampler {
 		Point2D											// only used to set up a vector noise table
 		sample_one_set(void);							// this is not discussed in the book, but see the
 														// file LatticeNoise.cpp in Chapter 31
+
+		virtual int
+		rand_int(void);
 		
+		virtual float
+		rand_float(void);
+
+		
+		virtual int
+		rand_int(int min, int max);
+		
+		virtual float
+		rand_float(float min, float max);
+
+		virtual void
+		set_rand_seed(const int seed);
+
 	protected:
 	
 		int 					num_samples;     		// the number of sample points in a set
@@ -95,5 +112,32 @@ class Sampler {
 		int 					jump;					// random index jump
 };
 
+inline int
+Sampler::rand_int(void){
+	return (rand());
+}
+
+inline float
+Sampler::rand_float(void){
+	return ((float)rand() / (float) RAND_MAX);
+}
+
+inline int
+Sampler::rand_int(int n, int m){
+	return n + (rand() % (int)(m - n + 1));
+}
+
+inline float
+Sampler::rand_float(float n, float m){
+  float random = ((float) rand()) / (float) RAND_MAX;
+    float diff = m - n;
+    float r = random * diff;
+    return n + r;
+}
+
+inline void
+Sampler::set_rand_seed(const int seed){
+srand(seed);
+}
 #endif
 

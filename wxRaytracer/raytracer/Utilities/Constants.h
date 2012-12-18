@@ -20,6 +20,7 @@ const RGBColor  green(0.0, 1.0, 0.0);
 const RGBColor  blue(0.0, 0.0, 1.0);
 const RGBColor  brown(.5,.3,.05);
 const RGBColor  yellow(1,1,0);
+const RGBColor gold(.97, .86, .49);
 const float 	invRAND_MAX = 1.0 / (float)RAND_MAX;
 
 #endif

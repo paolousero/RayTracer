@@ -1,0 +1,17 @@
+﻿Build started 12/18/2012 11:41:06 AM.
+     1>Project "C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\wxRaytracer_vcpp2005ee.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\wxRaytracer.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+       Link:
+         All outputs are up-to-date.
+         wxRaytracer_vcpp2005ee.vcxproj -> C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\Release\wxRaytracer.exe
+       FinalizeBuildStatus:
+         Deleting file "Release\wxRaytracer.unsuccessfulbuild".
+         Touching "Release\wxRaytracer.lastbuildstate".
+     1>Done Building Project "C:\Users\jpu5045\Desktop\RayTracer\RayTracer\wxRaytracer\wxRaytracer_vcpp2005ee.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.30

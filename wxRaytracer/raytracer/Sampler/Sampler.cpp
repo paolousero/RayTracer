@@ -107,7 +107,7 @@ void
 Sampler::shuffle_x_coordinates(void) {
 	for (int p = 0; p < num_sets; p++)
 		for (int i = 0; i <  num_samples - 1; i++) {
-			int target = (int)rand() % num_samples + p * num_samples;
+			int target = rand_int() % num_samples + p * num_samples;
 			float temp = samples[i + p * num_samples + 1].x;
 			samples[i + p * num_samples + 1].x = samples[target].x;
 			samples[target].x = temp;
@@ -122,7 +122,7 @@ void
 Sampler::shuffle_y_coordinates(void) {
 	for (int p = 0; p < num_sets; p++)
 		for (int i = 0; i <  num_samples - 1; i++) {
-			int target = (int)rand() % num_samples + p * num_samples;
+			int target = rand_int() % num_samples + p * num_samples;
 			float temp = samples[i + p * num_samples + 1].y;
 			samples[i + p * num_samples + 1].y = samples[target].y;
 			samples[target].y = temp;
@@ -259,7 +259,7 @@ Sampler::map_samples_to_sphere(void) {
 Point2D
 Sampler::sample_unit_square(void) {
 	if (count % num_samples == 0)  									// start of a new pixel
-		jump = ((int)rand() % num_sets) * num_samples;				// random index jump initialised to zero in constructor
+		jump = (rand_int() % num_sets) * num_samples;				// random index jump initialised to zero in constructor
 
 	return (samples[jump + shuffled_indices[jump + count++ % num_samples]]);  
 }
@@ -303,7 +303,7 @@ Sampler::sample_unit_square(void) {
 Point2D
 Sampler::sample_unit_disk(void) {
 	if (count % num_samples == 0)  									// start of a new pixel
-		jump = ((int)rand() % num_sets) * num_samples;
+		jump = (rand_int() % num_sets) * num_samples;
 	
 	return (disk_samples[jump + shuffled_indices[jump + count++ % num_samples]]);
 }
@@ -315,7 +315,7 @@ Sampler::sample_unit_disk(void) {
 Point3D
 Sampler::sample_hemisphere(void) {
 	if (count % num_samples == 0)  									// start of a new pixel
-		jump = ((int)rand() % num_sets) * num_samples;
+		jump = (rand_int() % num_sets) * num_samples;
 		
 	return (hemisphere_samples[jump + shuffled_indices[jump + count++ % num_samples]]);		
 }
@@ -327,7 +327,7 @@ Sampler::sample_hemisphere(void) {
 Point3D
 Sampler::sample_sphere(void) {
 	if (count % num_samples == 0)  									// start of a new pixel
-		jump = ((int)rand() % num_sets) * num_samples;
+		jump = (rand_int() % num_sets) * num_samples;
 		
 	return (sphere_samples[jump + shuffled_indices[jump + count++ % num_samples]]);		
 }

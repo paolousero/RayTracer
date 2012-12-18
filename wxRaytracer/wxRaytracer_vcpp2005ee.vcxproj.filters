@@ -145,6 +145,9 @@
     <ClCompile Include="raytracer\Materials\Phong.cpp" />
     <ClCompile Include="raytracer\Materials\Reflective.cpp" />
     <ClCompile Include="raytracer\Tracers\Whitted.cpp" />
+    <ClCompile Include="raytracer\Sampler\MultiJittered.cpp" />
+    <ClCompile Include="raytracer\Sampler\Jittered.cpp" />
+    <ClCompile Include="raytracer\Lights\AmbientOccluder.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="raytracer\BRDFs\BRDF.h">
@@ -253,8 +256,8 @@
     <ClInclude Include="raytracer\materials\phong.h" />
     <ClInclude Include="raytracer\materials\reflective.h" />
     <ClInclude Include="raytracer\tracers\whitted.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <ClInclude Include="raytracer\Sampler\MultiJittered.h" />
+    <ClInclude Include="raytracer\Sampler\Jittered.h" />
+    <ClInclude Include="raytracer\Lights\AmbientOccluder.h" />
   </ItemGroup>
 </Project>

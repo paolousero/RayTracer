@@ -3,6 +3,7 @@
 
 #include "Light.h"
 #include "Sampler.h"
+#include "World.h"
 
 class AmbientOccluder: public Light {
 	public:
@@ -34,6 +35,9 @@ class AmbientOccluder: public Light {
 
 		void
 		set_sampler(Sampler* s_ptr);
+
+		void
+		set_min_amount(float min);
 		
 		virtual Vector3D								
 		get_direction(ShadeRec& s); 
@@ -42,16 +46,24 @@ class AmbientOccluder: public Light {
 		L(ShadeRec& s);
 	
 		virtual bool
-		in_shadow(const Ray& ray, ShadeRec& sr)const;
+		in_shadow(const Ray& ray,const ShadeRec& sr)const;
 
 	private:
 		Vector3D u,v,w;
 		Sampler* sampler_ptr;
-		RGBColor min_amount;
+		float min_amount;
 		float		ls;
 		RGBColor	color;
 };
 
+
+
+// ------------------------------------------------------------------------------- scale_radiance
+
+inline void
+AmbientOccluder::set_min_amount(float b) { 
+	min_amount = b;
+}
 
 
 

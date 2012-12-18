@@ -1,6 +1,10 @@
 #ifndef __VIEW_PLANE__
 #define __VIEW_PLANE__
 
+#include "Sampler.h"
+#include "Regular.h"
+#include "MultiJittered.h"
+
 //-------------------------------------------------------------------------------------- class ViewPlane
 
 class ViewPlane {
@@ -14,6 +18,7 @@ class ViewPlane {
 		float			gamma;						// gamma correction factor
 		float			inv_gamma;					// the inverse of the gamma correction factor
 		bool			show_out_of_gamut;			// display red if RGBColor out of gamut
+		Sampler*		sampler_ptr;
 		
 									
 	
@@ -44,6 +49,12 @@ class ViewPlane {
 		
 		void
 		set_samples(const int n);			
+
+		void
+		set_sampler(Sampler* s);
+
+		void
+		set_max_depth(const int n);
 };
 
 
@@ -89,12 +100,44 @@ ViewPlane::set_gamut_display(const bool show) {
 	show_out_of_gamut = show;
 }
 
+// ------------------------------------------------------------------------------ set_sampler
+
+inline void
+ViewPlane::set_sampler(Sampler* sp) {
+	if(sampler_ptr){
+			//delete sampler_ptr;
+			sampler_ptr = NULL;
+	}
+
+	num_samples = sp->get_num_samples();
+	sampler_ptr = sp;
+}
+
 
 // ------------------------------------------------------------------------------ set_samples
 
 inline void
 ViewPlane::set_samples(const int n) {
 	num_samples = n;
+
+	if(sampler_ptr)
+	{
+		//delete sampler_ptr;
+		sampler_ptr = NULL;
+	}
+
+	if(num_samples>1)
+			sampler_ptr = new MultiJittered(num_samples);
+	else
+		sampler_ptr = new Regular(1);
+}
+
+
+// ------------------------------------------------------------------------------ set_max_Depth
+
+inline void 													
+ViewPlane::set_max_depth(const int n) {
+	max_depth = n;
 }
 
 #endif

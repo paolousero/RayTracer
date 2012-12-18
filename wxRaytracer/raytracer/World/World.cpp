@@ -16,7 +16,8 @@
 #include "SolidCylinder.h"
 
 //samplers
-
+#include "MultiJittered.h"
+#include "Jittered.h"
 #include "Regular.h"
 
 // tracers
@@ -34,10 +35,9 @@
 
 #include "Directional.h"
 #include "PointLight.h"
-//#include "AmbientOccluder.h"
+#include "AmbientOccluder.h"
 
 // materials
-
 #include "Matte.h"
 #include "Phong.h"
 #include "Reflective.h"
@@ -58,6 +58,7 @@
 //#include "blankPlane.cpp"
 //#include "blankSphere.cpp"
 #include "objTest.cpp"
+//#include "6.cpp"
 //#include "4_08.cpp"
 //#include "BuildFigure19_07.cpp"
 //#include "shadowbuild.cpp"
@@ -120,6 +121,7 @@ World::render_scene(void) const {
 	float		zw		= 100.0;				// hardwired in
 	//optional regular sampling code===================================
 	int n = (int)sqrt((float)vp.num_samples);
+	Point2D sp;			//sample point in [0,1] x[0,1]
 	Point2D pp;
 
 	ray.d = Vector3D(0, 0, -1);
@@ -130,8 +132,9 @@ World::render_scene(void) const {
 
 			for(int p = 0; p< n;p++){ //op
 				for(int q = 0; q< n ;q++){ //op
-					pp.x = vp.s*( c - 0.5 * vp.hres + (q + 0.5)/n);//op
-					pp.y = vp.s*( r - 0.5 * vp.vres + (p + 0.5)/n); //op
+					sp = vp.sampler_ptr->sample_unit_square();
+					pp.x = vp.s*( c - 0.5 * vp.hres + sp.x);//op
+					pp.y = vp.s*( r - 0.5 * vp.vres + sp.y); //op
 				//ray.o = Point3D(s * (c - hres / 2.0 + 0.5), s * (r - vres / 2.0 + 0.5), zw); 
 				ray.o = Point3D(pp.x, pp.y, zw);
 				pixel_color += tracer_ptr->trace_ray(ray, 0);

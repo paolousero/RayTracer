@@ -7,11 +7,12 @@
 
 void 												
 World::build(void) {
-	int num_samples = 16;
-	
+	int num_samples = 1;
+	Jittered* jitt_ptr = (new Jittered(num_samples));
 	vp.set_hres(600);	  		
 	vp.set_vres(600);
-	vp.set_samples(num_samples);
+	vp.set_sampler(jitt_ptr);
+	//vp.set_samples(num_samples);
 	
 	tracer_ptr = new RayCast(this);
 			

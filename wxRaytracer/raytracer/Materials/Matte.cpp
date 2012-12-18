@@ -116,14 +116,15 @@ Matte::shade(ShadeRec& sr)
 		if(ndotwi > 0.0){
 			bool in_shadow = false;
 			
-		if(sr.w.lights[j]->casts_shadows()){
-			Ray shadowRay(sr.hit_point, wi);
-			in_shadow = sr.w.lights[j]->in_shadow(shadowRay, sr);
-		}
+			if(sr.w.lights[j]->casts_shadows())
+			{
+				Ray shadowRay(sr.hit_point, wi);
+				in_shadow = sr.w.lights[j]->in_shadow(shadowRay, sr);
+			}
 		
-		if(!in_shadow)
-				L +=( diffuse_brdf->f(sr,wo,wi)) * sr.w.lights[j]->L(sr)*ndotwi;
-		}
+			if(!in_shadow)
+					L +=( diffuse_brdf->f(sr,wo,wi)) * sr.w.lights[j]->L(sr)*ndotwi;
+			}
 	}
 	return(L);
 }

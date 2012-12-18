@@ -54,7 +54,7 @@ Light::set_shadows(bool s){
 
 inline bool
 Light::casts_shadows(){
-	return true;
+	return shadows;
 }
 
 #endif
